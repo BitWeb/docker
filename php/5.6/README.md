@@ -7,3 +7,4 @@ Includes the following PHP extensions
 - json
 - gd
 - xml
+- zip

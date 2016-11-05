@@ -1,8 +1,8 @@
 # docker
 Dockerfiles for common environments
 
-## Publishing to DockerHub
+## Publishing to Docker Hub
 
-You have to be logged in to docker, use `docker info` to check if you have logged in, if not, use `docker login`.
+There are automated build repositories in Docker Hub
 
-There will be a `publish.sh` file accompanying every Dockerfile, just execute this file in the directory.
+- [PHP](https://hub.docker.com/r/bitweb/php/)

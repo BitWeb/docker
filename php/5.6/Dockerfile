@@ -13,11 +13,11 @@ RUN LC_ALL=en_US.UTF-8 add-apt-repository ppa:ondrej/php
 
 # Install PHP 5.6
 RUN apt-get update -qq
-RUN apt-get install -qq php5.6 php5.6-json php5.6-curl php5.6-gd php5.6-xml php5.6-zip php5.6-unzip
+RUN apt-get install -qq php5.6 php5.6-json php5.6-curl php5.6-gd php5.6-xml php5.6-zip
 RUN apt-get clean
 
 # Installs Git as a fallback for composer
-RUN apt-get install git
+RUN apt-get install -qq git
 
 # Download and verify Composer for dependency management
 RUN php -r "copy('https://getcomposer.org/installer', 'composer-setup.php');" \
