@@ -13,5 +13,5 @@ RUN LC_ALL=en_US.UTF-8 add-apt-repository ppa:ondrej/php
 
 # Insall required dependencies
 RUN apt-get update -qq
-RUN apt-get install -qq apache2 php5.6 php5.6-json php5.6-curl php5.6-curl php5.6-gd
+RUN apt-get install -qq php5.6-json php5.6-curl php5.6-gd php5.6-xml
 RUN apt-get clean
