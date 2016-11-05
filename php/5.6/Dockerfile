@@ -11,7 +11,13 @@ RUN apt-get update -qq
 RUN apt-get -qq install software-properties-common
 RUN LC_ALL=en_US.UTF-8 add-apt-repository ppa:ondrej/php
 
-# Insall required dependencies
+# Install required dependencies
 RUN apt-get update -qq
 RUN apt-get install -qq php5.6-json php5.6-curl php5.6-gd php5.6-xml
 RUN apt-get clean
+
+# Download and verify Composer for dependency management
+RUN php -r "copy('https://getcomposer.org/installer', 'composer-setup.php');" \
+    && php -r "if (hash_file('SHA384', 'composer-setup.php') === trim(file_get_contents('https://composer.github.io/installer.sig'))) { echo 'Installer verified'; } else { echo 'Installer corrupt'; unlink('composer-setup.php'); } echo PHP_EOL;" \
+    && php composer-setup.php \
+    && php -r "unlink('composer-setup.php');"
