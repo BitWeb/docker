@@ -4,6 +4,7 @@ Built on Ubuntu 14.04 and includes the latest version of [Composer](https://getc
 
 Includes the following PHP extensions
 - curl
+- intl
 - json
 - gd
 - xml
