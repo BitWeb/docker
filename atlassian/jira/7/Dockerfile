@@ -16,6 +16,7 @@ RUN mkdir -p          ${JIRA_HOME} \
     && chmod -R 700   ${JIRA_HOME} \
     && mkdir -p       ${JIRA_INSTALL}/conf/Catalina \
     && curl -Ls       ${DOWNLOAD_URL} | tar -xz --directory ${JIRA_INSTALL} --strip-components=1 --no-same-owner \
+    && curl -Ls       ${CONNECTOR_DOWNLOAD_URL} | tar -xz --directory ${JIRA_INSTALL}/lib --strip-components=1 --no-same-owner "mysql-connector-java-$CONNECTOR_VERSION/mysql-connector-java-$CONNECTOR_VERSION-bin.jar" \
     && chmod -R 700   ${JIRA_INSTALL}/conf \
     && chmod -R 700   ${JIRA_INSTALL}/logs \
     && chmod -R 700   ${JIRA_INSTALL}/temp \
