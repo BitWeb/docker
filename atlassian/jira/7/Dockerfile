@@ -42,4 +42,4 @@ WORKDIR $JIRA_INSTALL
 EXPOSE 8080
 
 # Startup
-CMD ["$JIRA_INSTALL/bin/start-jira.sh -fg"]
+CMD ["./bin/start-jira.sh", "-fg"]
