@@ -7,8 +7,16 @@ ENV JIRA_INSTALL           /opt/atlassian/jira
 ENV JIRA_VERSION           7.2.4
 ENV DOWNLOAD_URL           https://www.atlassian.com/software/jira/downloads/binary/atlassian-jira-software-${JIRA_VERSION}.tar.gz
 
+# MySQL Connector
+ENV CONNECTOR_VERSION      5.1.40
+ENV CONNECTOR_DOWNLOAD_URL https://dev.mysql.com/get/Downloads/Connector-J/mysql-connector-java-${CONNECTOR_VERSION}.tar.gz
+
+#################################################
+####     No need to edit below this line     ####
+#################################################
+
 # Install JIRA dependencies
-RUN apt-get -qq install --no-install-recommends libtcnative-1 curl htop nano
+RUN apt-get update && apt-get -y install --no-install-recommends curl htop
 
 # Install JIRA and helper tools and setup initial home directory structure
 RUN mkdir -p          ${JIRA_HOME} \
