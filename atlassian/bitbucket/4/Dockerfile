@@ -41,6 +41,8 @@ RUN sed -i "s#export BITBUCKET_HOME=#export BITBUCKET_HOME=$BITBUCKET_HOME#g" ${
 # Change entropy gathering daemon https://jira.atlassian.com/browse/BSERV-8345
 RUN sed -i 's/JVM_SUPPORT_RECOMMENDED_ARGS=""/JVM_SUPPORT_RECOMMENDED_ARGS="-Djava\.security\.egd=file:\/dev\/\.\/urandom"/g' ${BITBUCKET_INSTALL}/bin/setenv.sh
 
+WORKDIR $BITBUCKET_INSTALL
+
 # HTTP Port
 EXPOSE 7990
 
